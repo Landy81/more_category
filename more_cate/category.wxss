@@ -1,0 +1,241 @@
+.pl80 {
+    padding-left: 80rpx;
+}
+
+.pl40 {
+    padding-left: 40rpx;
+}
+
+.ml30 {
+    margin-left: 30rpx;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    overflow: scroll;
+}
+.flex_w{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title_info {
+    width: 100%;
+    height: 60rpx;
+    background-color: #fff1df;
+    line-height: 60rpx;
+}
+
+.title_info text {
+    font-size: 24rpx;
+    color: #ffbf6d;
+    margin-left: 21rpx;
+}
+
+.item_info image {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+
+
+.title_info {
+    width: 100%;
+    height: 60rpx;
+    background-color: #fff1df;
+    line-height: 60rpx;
+}
+
+.title_info text {
+    font-family: PingFang-SC-Regular;
+    font-size: 24rpx;
+    color: #ffbf6d;
+    margin-left: 21rpx;
+}
+
+.del {
+    background-color: #e60012;
+    height: 95rpx;
+    color: #fff;
+    width: 130rpx;
+    line-height: 95rpx;
+    text-align: center;
+}
+
+.item-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.item-wrapper .item_list {
+    line-height: 128rpx;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 999;
+    display: block;
+}
+
+.movable-view{
+  width: 100%;
+  height: 100%;
+}
+.touch-item {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+.item_info {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(180px);
+  transform: translateX(180px);
+  margin-left: -180px
+}
+.hua_btns {
+  -webkit-transform: translateX(180px);
+  transform: translateX(180px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.touch-move-active .item_info,
+.touch-move-active .hua_btns {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.select {
+    /* width: 60rpx; */
+    padding: 5rpx 8rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    border-radius: 14rpx;
+    font-size: 20rpx;
+    text-align: center;
+    margin-left: 15rpx;
+}
+
+.select_one {
+    background-color: #d9efff;
+    color: #7cc9ff;
+}
+
+.select_two {
+    background-color: #ffebdd;
+    color: #ffb090;
+}
+
+.select_thr {
+    background-color: #d2ffef;
+    color: #89d2b8;
+}
+
+.item-wrapper .item_list movable-area {
+    height: 120rpx;
+    width: 100%;
+    /* width: calc(100vw - 360rpx); */
+}
+
+movable-view {
+    height: 120rpx;
+    width: 100vw;
+    background: #fff;
+    z-index: 999;
+}
+
+.item-wrapper .item_list .item_info {
+    padding: 0 28rpx 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    transition: left 0.2s ease-in-out;
+    height: 128rpx；;
+}
+
+.hua_btns {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 128rpx;
+}
+
+/* .hua_btns .delete-btn {
+    width: 180rpx;
+    height: 128rpx;
+    line-height: 128rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #fff;
+    z-index: 1;
+    background: rgba(230, 0, 18, 1);
+    text-align: center;
+} */
+
+.hua_btns .sortBtns {
+    width: 180rpx;
+    background-color: rgba(230, 0, 18, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.hua_btns .delete-btn{
+  width: 90rpx;
+}
+.hua_btns .sortBtns text{
+  color: #fff;
+  width: 100%;
+  text-align: center
+}
+
+.hua_btns .sortBtns image {
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.footer_wrap {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer_wrap text {
+    line-height: 98rpx;
+}
+
+.footer_btn {
+    height: 98rpx;
+    padding: 0 18rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.footer_btn .add_class_btn {
+    width: 250rpx;
+    height: 70rpx;
+    background-image: linear-gradient(90deg, #ff9000 0%, #ff6d2b 100%),
+                      linear-gradient(#ff9000, #ff9000);
+    background-blend-mode: normal, normal;
+    border-radius: 35rpx;
+    text-align: center;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    color: #fff;
+    margin-top: 15rpx;
+}

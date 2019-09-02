@@ -1,0 +1,87 @@
+<!-- 信息展示 -->
+<view class="title_info">
+  <text>{{title_info}}</text>
+</view>
+<!-- 商品分类 -->
+<view class="" style="">
+  <!-- 分类区 -->
+  <!-- 一级分类区 -->
+  <ul class='item-wrapper'>
+    <li class='item_list' wx:for="{{cate_list}}" wx:for-item="one_select" wx:key="one_select.id" wx:for-index="index">
+      <movable-area>
+        <movable-view direction="horizontal" class='movable-view' class="touch-item {{one_select.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+          <view class='item_info  flex_w'>
+            <view class='title_left  flex_w' data-index='{{index}}' data-depth="{{one_select.depth}}" data-p-id="0" data-id="{{one_select.id}}" data-array="{{one_select}}" catchtap='showSelect'>
+              <image :src="{{one_select.logo}}" class="icon"></image>
+              <view class="select_title">{{one_select.name}}</view>
+              <view class="select select_one">一级</view>
+            </view>
+          </view>
+          <view class="hua_btns">
+            <view class="sortBtns">
+              <text data-id="{{one_select.id}}" data-index="{{index}}" data-type="up" bindtap="handleSort">↑</text>
+              <text data-id="{{one_select.id}}" data-index="{{index}}" data-type="down" bindtap="handleSort">↓</text>
+            </view>
+            <view class="sortBtns delete-btn" catchtap="del" data-index="{{index}}" data-id="{{two_select.id}}">
+              <text>—</text>
+            </view>
+          </view>
+        </movable-view>
+      </movable-area>
+
+      <!-- 二级分类 -->
+      <ul class='item-wrapper' wx:if="{{one_select.sub && showIndex==one_select.id}}">
+        <li class='item_list' wx:for="{{one_select.sub}}" wx:for-item="two_select" wx:key="two_select.id" wx:for-index="index_two">
+          <movable-area>
+            <movable-view direction="horizontal" class='movable-view' class="touch-item {{two_select.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}-{{index_two}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+              <view class='item_info  flex_w'>
+                <view class='title_left  flex_w pl40' data-p-id="{{one_select.id}}" data-id="{{two_select.id}}" catchtap='showSelect'>
+                  <image :src="{{two_select.logo}}" class="icon"></image>
+                  <view class="select_title">{{two_select.name}}</view>
+                  <view class="select select_two">二级{{two_select.id}}</view>
+                </view>
+              </view>
+              <view class="hua_btns">
+                <view class="sortBtns">
+                  <text data-id="{{one_select.id}}" data-id="{{two_select.id}}" data-index="{{index}}-{{index_two}}" data-type="up" bindtap="handleSort">↑</text>
+                  <text data-id="{{one_select.id}}" data-id="{{two_select.id}}" data-index="{{index}}-{{index_two}}" data-type="down" bindtap="handleSort">↓</text>
+                </view>
+                <view class="sortBtns delete-btn" catchtap="del" data-index="{{index}}-{{index_two}}" data-id="{{two_select.id}}">
+                  <text>—</text>
+                </view>
+              </view>
+            </movable-view>
+          </movable-area>
+
+          <!-- 三级分类 -->
+          <ul class='item-wrapper' wx:if="{{ two_select.sub  && showIndex_thr == two_select.id }}">
+            <!--  -->
+            <li class='item_list' wx:for="{{two_select.sub}}" wx:for-item="three_select" wx:key="three_select.id" wx:for-index="index_three" data-id="{{three_select.id}}">
+              <movable-area>
+                <movable-view direction="horizontal" class='movable-view' class="touch-item {{three_select.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}-{{index_two}}-{{index_three}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+                  <view class='item_info  flex_w'>
+                    <view class='title_left  flex_w pl80'>
+                      <image :src="{{three_select.logo}}" class="icon"></image>
+                      <view class="select_title">{{three_select.name}}</view>
+                      <view class="select select_thr">三级</view>
+                    </view>
+                  </view>
+                  <view class="hua_btns">
+                    <view class="sortBtns">
+                      <text data-id="{{one_select.id}}" data-index="{{index}}-{{index_two}}-{{index_three}}" data-id="{{three_select.id}}" data-type="up" bindtap="handleSort">↑</text>
+                      <text data-id="{{one_select.id}}" data-index="{{index}}-{{index_two}}-{{index_three}}" data-id="{{three_select.id}}" data-type="down" bindtap="handleSort">↓</text>
+                    </view>
+                    <view class="sortBtns delete-btn"catchtap="del" data-index="{{index}}-{{index_two}}-{{index_three}}" data-id="{{two_select.id}}">
+                      <text>—</text>
+                    </view>
+                  </view>
+                </movable-view>
+              </movable-area>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</view>
